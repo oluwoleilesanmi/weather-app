@@ -1,5 +1,5 @@
 const http_helper = () => {
-  let getTemperature = (key, city) => {
+  let getTemperature = (key, city, errMsg) => {
     fetch(urlBuilder(key, city), { mode: "cors" })
       .then(function(response) {
         return response.json();
@@ -8,7 +8,7 @@ const http_helper = () => {
         console.log(json.main.temp);
       })
       .catch(function(err) {
-        console.log("City not found");
+        console.log(errMsg);
       });
   };
 
