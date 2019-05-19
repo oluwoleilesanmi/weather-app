@@ -26,6 +26,10 @@ let clearErr = () => {
   getErrDiv().innerHTML = "";
 };
 
+let getContainer = () => {
+  return document.getElementById("container");
+};
+
 export {
   clearInput,
   getSearchBtn,
@@ -33,5 +37,6 @@ export {
   getCelDiv,
   getFehDiv,
   getInput,
-  clearErr
+  clearErr,
+  getContainer
 };

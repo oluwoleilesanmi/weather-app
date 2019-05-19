@@ -7,26 +7,19 @@ import {
   getCelDiv,
   getFehDiv,
   getInput,
-  clearErr
+  clearErr,
+  getContainer
 } from "./js/view_helper";
-
-let getTemperature = city => {
-  fetch(urlBuilder(apiKey, city))
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(json) {
-      displayTemp(json);
-    })
-    .catch(function(err) {
-      displayErr(msg);
-    });
-};
 
 let displayTemp = json => {
   const celcius = json.main.temp;
   getFehDiv().innerHTML = toFahrenheit(celcius);
   getCelDiv().innerHTML = celcius;
+  getContainer().style.display = "block";
+};
+
+let clearTemp = () => {
+  getContainer().style.display = "none";
 };
 
 let displayErr = msg => {
@@ -41,11 +34,23 @@ const isValid = city => {
 
 getSearchBtn().addEventListener("click", e => {
   e.preventDefault();
-  getCelDiv().innerHTML = "";
-  getFehDiv().innerHTML = "";
+  clearTemp();
   const city = getInput().value;
   if (isValid(city)) getTemperature(city);
 });
+
+let getTemperature = city => {
+  fetch(urlBuilder(apiKey, city))
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(json) {
+      displayTemp(json);
+    })
+    .catch(function(err) {
+      displayErr(msg);
+    });
+};
 
 let urlBuilder = (k, c) => {
   return `https://api.openweathermap.org/data/2.5/weather?q=${c}&appid=${k}&units=metric`;
