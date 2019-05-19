@@ -6,12 +6,32 @@ const getSearchBtn = () => {
   return document.getElementById("search-btn");
 };
 
+const getInput = () => {
+  return document.getElementById("search");
+};
+
 const getErrDiv = () => {
   return document.getElementById("err-msg");
 };
 
-const getTempDiv = () => {
-  return document.getElementById("temp-msg");
+const getCelDiv = () => {
+  return document.getElementById("cel-msg");
 };
 
-export { clearInput, getSearchBtn, getErrDiv, getTempDiv };
+const getFehDiv = () => {
+  return document.getElementById("feh-msg");
+};
+
+let clearErr = () => {
+  getErrDiv().innerHTML = "";
+};
+
+export {
+  clearInput,
+  getSearchBtn,
+  getErrDiv,
+  getCelDiv,
+  getFehDiv,
+  getInput,
+  clearErr
+};
