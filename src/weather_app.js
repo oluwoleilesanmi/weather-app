@@ -1,15 +1,6 @@
 import { apiKey, msg } from "./js/constants_helper";
 import { toFahrenheit } from "./js/conversion_helper";
-import {
-  clearInput,
-  getSearchBtn,
-  getErrDiv,
-  getCelDiv,
-  getFehDiv,
-  getInput,
-  clearErr,
-  getContainer
-} from "./js/view_helper";
+import { clearInput, getSearchBtn, getErrDiv, getCelDiv, getFehDiv, getInput, clearErr, getContainer} from "./js/view_helper";
 
 let displayTemp = json => {
   const celcius = json.main.temp;

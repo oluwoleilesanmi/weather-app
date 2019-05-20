@@ -30,13 +30,4 @@ let getContainer = () => {
   return document.getElementById("container");
 };
 
-export {
-  clearInput,
-  getSearchBtn,
-  getErrDiv,
-  getCelDiv,
-  getFehDiv,
-  getInput,
-  clearErr,
-  getContainer
-};
+export { clearInput, getSearchBtn, getErrDiv, getCelDiv, getFehDiv, getInput, clearErr, getContainer };
