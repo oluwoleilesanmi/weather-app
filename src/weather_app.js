@@ -1,9 +1,11 @@
-import { apiKey, msg } from "./js/constants_helper";
-import { toFahrenheit } from "./js/conversion_helper";
-import { clearInput, getSearchBtn, getErrDiv, getCelDiv, getFehDiv, getInput, clearErr, getContainer} from "./js/view_helper";
+import { apiKey, msg, color } from "./js/constants_helper";
+import { toFahrenheit, tempInWords } from "./js/conversion_helper";
+import { clearInput, getSearchBtn, getErrDiv, getCelDiv, getFehDiv, getInput, 
+         clearErr, getContainer, getBodyStyle } from "./js/view_helper";
 
 let displayTemp = json => {
   const celcius = json.main.temp;
+  setColor(celcius);
   getFehDiv().innerHTML = toFahrenheit(celcius);
   getCelDiv().innerHTML = celcius;
   getContainer().style.display = "block";
@@ -16,7 +18,19 @@ let clearTemp = () => {
 let displayErr = msg => {
   getErrDiv().innerHTML = msg;
   clearInput();
+  getBodyStyle().backgroundColor = color.white;
   setTimeout(clearErr, 2000);
+};
+
+let setColor = value => {
+  let word = tempInWords(value);
+  if (word === "hot") {
+    getBodyStyle().backgroundColor = color.red;
+  } else if (word === "cold") {
+    getBodyStyle().backgroundColor = color.blue;
+  } else {
+    getBodyStyle().backgroundColor = color.yellow;
+  }
 };
 
 const isValid = city => {

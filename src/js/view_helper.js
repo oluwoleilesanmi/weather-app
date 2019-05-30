@@ -22,12 +22,17 @@ const getFehDiv = () => {
   return document.getElementById("feh-msg");
 };
 
-let clearErr = () => {
+const getBodyStyle = () => {
+  return document.body.style;
+};
+
+const clearErr = () => {
   getErrDiv().innerHTML = "";
 };
 
-let getContainer = () => {
+const getContainer = () => {
   return document.getElementById("container");
 };
 
-export { clearInput, getSearchBtn, getErrDiv, getCelDiv, getFehDiv, getInput, clearErr, getContainer };
+export { clearInput, getSearchBtn, getErrDiv,getCelDiv, 
+         getFehDiv, getInput, clearErr, getContainer, getBodyStyle };
