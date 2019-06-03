@@ -3,11 +3,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Todo-list</title>
+    <title>Weather-app</title>
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <link rel="stylesheet" type="text/css" href="./css/reset.css" />
   </head>
   <body>
+    <h3>Search temperature of your favorite city</h3>
+    <form>
+      <input type="text" id="search" placeholder="Search by city" />
+      <input type="submit" id="search-btn" value="SEARCH" />
+    </form>
+    <div id="err-msg"></div>
+    <div id="container">
+      The temperate is
+      <div id="cel-msg"></div>
+      degree's Celsius and
+      <div id="feh-msg"></div>
+      degress's Fahrenheit
+    </div>
     <script src="./main.js"></script>
   </body>
 </html>

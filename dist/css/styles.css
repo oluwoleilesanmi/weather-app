@@ -1,3 +1,39 @@
-.hide {
+#cel-msg,
+#feh-msg {
+  display: inline-block;
+}
+
+#container {
   display: none;
+}
+
+#search {
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #b2b2b2;
+  width: 250px;
+  height: 42px;
+}
+
+#search-btn {
+  height: 42px;
+  padding: 10px;
+  width: 100px;
+  border-radius: 3px;
+  border: 1px solid #549365;
+  background: #80bd78;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+#search-btn:hover {
+  background: #549365;
+}
+
+body {
+  display: grid;
+  height: 70vh;
+  margin: 0;
+  place-items: center center;
 }
