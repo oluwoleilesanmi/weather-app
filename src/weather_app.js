@@ -1,7 +1,18 @@
 import { apiKey, msg, color } from "./js/constants_helper";
 import { toFahrenheit, tempInWords } from "./js/conversion_helper";
-import { clearInput, getSearchBtn, getErrDiv, getCelDiv, getFehDiv, getInput, 
-         clearErr, getContainer, getBodyStyle } from "./js/view_helper";
+import {
+  clearInput,
+  getSearchBtn,
+  getErrDiv,
+  getCelDiv,
+  getFehDiv,
+  getInput,
+  clearErr,
+  getContainer,
+  getBodyStyle
+} from "./js/view_helper";
+import "./css/style.css";
+import "./css/reset.css";
 
 let displayTemp = json => {
   const celcius = json.main.temp;
