@@ -9,3 +9,7 @@
 - Page color changes based on temperature :heavy_check_mark:
 - User will receive temperature in celcius and Fahrenheit :heavy_check_mark:
 - Red signifies hot, Yellow signifies warm, Blue signifies cold :heavy_check_mark:
+
+## Run
+
+run `npm run start:dev` in command-line then paste `http://localhost:9000/` in browser
